@@ -7,79 +7,81 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-export default function TabTwoScreen() {
+export default function ProfileScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
+      headerImage={
+        <Image
+          source={require('@/assets/images/Happy.jpg')} // Avatar image
+          style={styles.headerImage}
+        />
+      }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
+        <ThemedText type="title">Christian</ThemedText>
       </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
+      <ThemedText>This is my profile. Welcome!</ThemedText>
+
+      {/* About Me Section */}
+      <Collapsible title="About Me">
         <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
+          I am a passionate software developer with experience in mobile and web application
+          development. I love learning new technologies and applying them in real-world projects.
         </ThemedText>
+      </Collapsible>
+
+      {/* Skills Section */}
+      <Collapsible title="Skills">
         <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
+          - React & React Native{'\n'}
+          - JavaScript & TypeScript{'\n'}
+          - Node.js, Express, and MongoDB{'\n'}
+          - UI/UX Design and Frontend Development
         </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
+      </Collapsible>
+
+      {/* Projects Section */}
+      <Collapsible title="Projects">
+        <ThemedText>
+          Check out some of my projects below:{'\n'}
+          <ThemedText type="defaultSemiBold">1. Project A</ThemedText> - A mobile app that helps users track their fitness progress.{'\n'}
+          <ThemedText type="defaultSemiBold">2. Project B</ThemedText> - A full-stack web app for managing personal finances.
+        </ThemedText>
+        <ExternalLink href="https://myportfolio.com/projects">
+          <ThemedText type="link">See More Projects</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
+
+      {/* Experience Section */}
+      <Collapsible title="Experience">
         <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
+          - Software Developer at XYZ Corp (2022 - Present){'\n'}
+          - Frontend Developer at ABC Tech (2020 - 2022)
         </ThemedText>
       </Collapsible>
-      <Collapsible title="Images">
+
+      {/* Contact Section */}
+      <Collapsible title="Contact">
         <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
+          Feel free to get in touch with me via email at{' '}
+          <ThemedText type="defaultSemiBold">christian.jay@example.com</ThemedText>.
         </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
+        <ExternalLink href="https://linkedin.com/in/christianjay">
+          <ThemedText type="link">LinkedIn Profile</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
+
+      {/* Custom Section for Animations */}
       <Collapsible title="Animations">
         <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText> library
-          to create a waving hand animation.
+          Explore some animations I’ve worked on using{' '}
+          <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText>.
         </ThemedText>
         {Platform.select({
           ios: (
             <ThemedText>
               The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
+              provides a parallax effect for the header image.
             </ThemedText>
           ),
         })}
@@ -90,13 +92,15 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+    width: 150, // Adjust size for the avatar
+    height: 150,
+    borderRadius: 75, // Circular avatar
+    alignSelf: 'center',
+    marginBottom: -75, // Positioning
   },
   titleContainer: {
     flexDirection: 'row',
-    gap: 8,
+    justifyContent: 'center', // Center the title below the avatar
+    marginTop: 90, // Space from the avatar image
   },
 });
