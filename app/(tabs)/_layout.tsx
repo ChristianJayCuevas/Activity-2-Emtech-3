@@ -7,16 +7,13 @@ import { CustomTabBarHeader } from '@/components/navigation/CustomTabBarHeader';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-
+  
   return (
     <>
-      {/* Add custom header at the top */}
       <CustomTabBarHeader />
-
-      {/* Keep the tabs for routing, but hide the default tab bar */}
       <Tabs
         screenOptions={{
-          tabBarStyle: { display: 'none' }, // Hide default tab bar
+          tabBarStyle: { display: 'none' }, 
           headerShown: false,
         }}>
         <Tabs.Screen

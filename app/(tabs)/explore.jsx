@@ -13,7 +13,7 @@ export default function ProfileScreen() {
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
       headerImage={
         <Image
-          source={require('@/assets/images/Happy.jpg')} // Avatar image
+          source={require('@/assets/images/Happy.jpg')}
           style={styles.headerImage}
         />
       }>
@@ -31,7 +31,7 @@ export default function ProfileScreen() {
       </Collapsible>
 
       {/* Skills Section */}
-      <Collapsible title="Skills">
+      <Collapsible title="Finished Goals">
         <ThemedText>
           - React & React Native{'\n'}
           - JavaScript & TypeScript{'\n'}
@@ -40,8 +40,7 @@ export default function ProfileScreen() {
         </ThemedText>
       </Collapsible>
 
-      {/* Projects Section */}
-      <Collapsible title="Projects">
+      {/* <Collapsible title="Projects">
         <ThemedText>
           Check out some of my projects below:{'\n'}
           <ThemedText type="defaultSemiBold">1. Project A</ThemedText> - A mobile app that helps users track their fitness progress.{'\n'}
@@ -50,10 +49,10 @@ export default function ProfileScreen() {
         <ExternalLink href="https://myportfolio.com/projects">
           <ThemedText type="link">See More Projects</ThemedText>
         </ExternalLink>
-      </Collapsible>
+      </Collapsible> */}
 
       {/* Experience Section */}
-      <Collapsible title="Experience">
+      <Collapsible title="Ongoing Goals">
         <ThemedText>
           - Software Developer at XYZ Corp (2022 - Present){'\n'}
           - Frontend Developer at ABC Tech (2020 - 2022)
@@ -61,7 +60,7 @@ export default function ProfileScreen() {
       </Collapsible>
 
       {/* Contact Section */}
-      <Collapsible title="Contact">
+      <Collapsible title="Analytics">
         <ThemedText>
           Feel free to get in touch with me via email at{' '}
           <ThemedText type="defaultSemiBold">christian.jay@example.com</ThemedText>.
@@ -72,7 +71,7 @@ export default function ProfileScreen() {
       </Collapsible>
 
       {/* Custom Section for Animations */}
-      <Collapsible title="Animations">
+      {/* <Collapsible title="Animations">
         <ThemedText>
           Explore some animations I’ve worked on using{' '}
           <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText>.
@@ -85,7 +84,7 @@ export default function ProfileScreen() {
             </ThemedText>
           ),
         })}
-      </Collapsible>
+      </Collapsible> */}
     </ParallaxScrollView>
   );
 }
@@ -96,11 +95,12 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 75, // Circular avatar
     alignSelf: 'center',
-    marginBottom: -75, // Positioning
+    marginBottom: -75,
+    marginTop: 30 // Positioning
   },
   titleContainer: {
     flexDirection: 'row',
     justifyContent: 'center', // Center the title below the avatar
-    marginTop: 90, // Space from the avatar image
+    marginTop: 20, // Space from the avatar image
   },
 });
